@@ -84,9 +84,8 @@ public:
         for (auto it = scopes.rbegin(); it != scopes.rend(); ++it) {
             auto found = it->find(name);
             if (found != it->end()) {
-                // Return pointer to the variable in the original scopes vector
-                auto& scope = *it;
-                return &scope[name];
+                // Return pointer to the found variable
+                return &found->second;
             }
         }
         return nullptr;
@@ -204,7 +203,7 @@ int main() {
         std::vector<std::string> tokens;
         std::string token;
         for (char c : line) {
-            if (c == ' ') {
+            if (c == ' ' || c == '\t') {
                 if (!token.empty()) {
                     tokens.push_back(token);
                     token.clear();
