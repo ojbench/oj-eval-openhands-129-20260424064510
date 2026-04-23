@@ -5,9 +5,8 @@ project(Scope2025)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Use gcc-13
-set(CMAKE_C_COMPILER /usr/bin/gcc-13)
-set(CMAKE_CXX_COMPILER /usr/bin/g++-13)
+# Use default compiler
+# Remove explicit compiler specification
 
 # Add compile options for optimization
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -Wall -Wextra -Wpedantic")
